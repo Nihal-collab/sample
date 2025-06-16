@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'update_book' book.id %}">
+        {% csrf_token %}
+    <h1>Title</h1>
+    <input  name="title" type="text" value="{{book.title}}" required>
+    <h1>Author</h1>
+    <input name="author" type="text" value="{{book.author}}" required>
+    <h1>Contetn</h1>
+    <input name="content" type="text" value="{{book.content}}" required>
+
+    <button type="submit">submit</button>
+    </form>
+
+    
+</body>
+</html>
